@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- Define que o documento é HTML e o idioma é português do Brasil -->
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres para UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura a visualização em dispositivos móveis -->
+    <title>Calculadora de Média</title> <!-- Título da página que aparece na aba do navegador -->
+    <link rel="stylesheet" href="/static/styles/estilo.css"> <!-- Link para o arquivo CSS que estiliza a página -->
+</head>
+<body>
+    <div class="calc_media"> <!-- Div que agrupa todos os elementos da calculadora -->
+        <form class="calc_media_formulario" action="/cadastrar_aluno" method="post"> <!-- Início do formulário, que envia dados para a URL especificada -->
+            <h2>Calculadora de Média do Aluno</h2> <!-- Título da seção -->
+            <label for="nome_aluno">Nome do Aluno: </label> <!-- Rótulo para o campo do nome -->
+            <input type="text" name="nome_aluno" id="nome_aluno" required> <br> <!-- Campo de entrada para o nome do aluno, obrigatório -->
+            
+            <label for="nota1">Nota 1: </label> <!-- Rótulo para a primeira nota -->
+            <input type="number" name="nota1" id="nota1" step="0.01" required> <br> <!-- Campo para a primeira nota, aceita números com duas casas decimais -->
+            
+            <label for="nota2">Nota 2: </label> <!-- Rótulo para a segunda nota -->
+            <input type="number" name="nota2" id="nota2" step="0.01" required> <br> <!-- Campo para a segunda nota, também com duas casas decimais -->
+
+            <label for="nota3">Nota 3: </label> <!-- Rótulo para a terceira nota -->
+            <input type="number" name="nota3" id="nota3" step="0.01" required> <br> <!-- Campo para a terceira nota -->
+
+            <label for="nota4">Nota 4: </label> <!-- Rótulo para a quarta nota -->
+            <input type="number" name="nota4" id="nota4" step="0.01" required> <br> <!-- Campo para a quarta nota -->
+
+            <div> <!-- Agrupamento para os botões -->
+                <button class="calc_media_enviar" type="submit">Calcular Média</button> <!-- Botão para enviar o formulário e calcular a média -->
+                <button class="limpar_tudo" type="reset">Limpar tudo</button> <!-- Botão para limpar todos os campos do formulário -->
+            </div>
+        </form> <!-- Fim do formulário -->
+    </div> <!-- Fim da div que agrupa a calculadora -->
+</body>
+</html>

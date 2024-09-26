@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta</title>
+    <link rel="stylesheet" href="/static/styles/estilo.css">
+</head>
+<body>
+    <div class="consulta_alunos">
+        <h2>Consultar Médias dos Alunos</h2>
+        <table>
+            <tr>
+                <th>Nome do Aluno</th>
+                <th>Média</th>
+                <th>Ações</th>
+            </tr>
+            {% for aluno in alunos %}
+            <tr>
+                <td>{{ aluno.nome }}</td>
+                <td>{{ aluno.media }}</td>
+                <td>
+                    <form action="/deletar_aluno" method="post" style="display:inline;">
+                        <input type="hidden" name="nome_aluno" value="{{ aluno.nome }}">
+                        <button type="submit">Deletar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div style="margin-top: 20px;">
+            <a href="/" class="voltar-botao">Voltar ao Formulário</a>
+        </div>
+    </div>
+</body>
+</html>
