@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade em dispositivos móveis -->
+    <title>Consulta</title> <!-- Título da página -->
+    <link rel="stylesheet" href="/static/styles/estilo.css"> <!-- Link para o arquivo CSS externo -->
+</head>
+<body>
+    <div class="consulta_alunos"> <!-- Div que agrupa a seção de consulta -->
+        <h2>Consultar o IMC dos Alunos</h2> <!-- Título da seção de consulta -->
+        
+        <table> <!-- Início da tabela para exibir dados -->
+            <tr>
+                <th>Nome do Aluno</th> <!-- Cabeçalho da coluna para nome -->
+                <th>IMC</th> <!-- Cabeçalho da coluna para IMC -->
+                <th>Ações</th> <!-- Cabeçalho da coluna para ações -->
+            </tr>
+            {% for aluno in alunos %} <!-- Loop para iterar sobre a lista de alunos -->
+            <tr>
+                <td>{{ aluno.nome }}</td> <!-- Exibe o nome do aluno -->
+                <td>{{ aluno.imc }}</td> <!-- Exibe o IMC do aluno -->
+                <td>
+                    <form action="/deletar_aluno" method="post" style="display:inline;"> <!-- Formulário para deletar aluno -->
+                        <input type="hidden" name="aluno_id" value="{{ aluno.id }}"> <!-- Campo oculto para enviar o ID do aluno -->
+                        <button type="submit">Deletar</button> <!-- Botão para submeter o formulário de exclusão -->
+                    </form>
+                </td>
+            </tr>
+            {% endfor %} <!-- Fim do loop -->
+        </table> <!-- Fim da tabela -->
+        
+        <div style="margin-top: 20px;"> <!-- Div para o botão de voltar -->
+            <a href="/" class="voltar-botao">Voltar ao Formulário</a> <!-- Link para voltar ao formulário principal -->
+        </div>
+    </div>
+</body>
+</html>

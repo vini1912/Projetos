@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+:root {
+    --fonte-primaria: "Montserrat", sans-serif;
+    --cor-fundo: #cadef1; /* Cor de fundo da página */
+    --cor-borda: #1b2556; /* Cor das bordas */
+    --cor-foco: #A2A2A2; /* Cor de foco (hover) */
+    --cor-botao: lightgray; /* Cor padrão dos botões */
+    --cor-botao-hover: rgb(167, 167, 167); /* Cor dos botões ao passar o mouse */
+}
+
+* {
+    margin: 0; /* Remove a margem padrão de todos os elementos */
+    padding: 0; /* Remove o padding padrão de todos os elementos */
+    box-sizing: border-box; /* Inclui o padding e a borda no cálculo da largura e altura dos elementos */
+}
+
+body {
+    background-color: var(--cor-fundo); /* Define a cor de fundo do corpo */
+    font-family: var(--fonte-primaria); /* Define a fonte do corpo */
+}
+
+.calc_media,
+.consulta_alunos {
+    display: grid; /* Usando grid para layout */
+    grid-template-columns: auto; /* Colunas automáticas */
+    place-items: center; /* Centraliza os itens no grid */
+    margin-top: 30px; /* Margem superior */
+}
+
+.calc_media_formulario,
+.consulta_alunos table {
+    border: 3px solid var(--cor-borda); /* Borda com a cor definida */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: white; /* Fundo branco */
+}
+
+.calc_media_formulario h2,
+.consulta_alunos h2 {
+    margin-bottom: 20px; /* Margem inferior */
+    text-align: center; /* Centraliza o texto */
+}
+
+.calc_media_formulario label {
+    font-weight: bold; /* Texto em negrito */
+    margin: 10px 0 5px; /* Margens ao redor do rótulo */
+}
+
+.calc_media_formulario input[type="text"],
+.calc_media_formulario input[type="number"] {
+    width: 100%; /* Largura total */
+    font-size: 18px; /* Tamanho da fonte */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid var(--cor-borda); /* Borda com a cor definida */
+    margin-bottom: 20px; /* Margem inferior */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+.calc_media_formulario input[type="text"]:hover,
+.calc_media_formulario input[type="number"]:hover {
+    background-color: var(--cor-foco); /* Cor de fundo ao passar o mouse */
+}
+
+.calc_media_formulario input[type="text"]:focus,
+.calc_media_formulario input[type="number"]:focus {
+    background-color: var(--cor-foco); /* Cor de fundo ao focar */
+    outline: none; /* Remove a borda padrão de foco */
+}
+
+.calc_media_enviar {
+    font-size: 18px; /* Tamanho da fonte */
+    background-color: var(--cor-botao); /* Cor de fundo do botão */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 50px; /* Bordas arredondadas */
+    border: none; /* Remove a borda */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+.calc_media_enviar:hover {
+    background-color: var(--cor-botao-hover); /* Cor de fundo ao passar o mouse */
+}
+
+.consulta_alunos table {
+    width: 100%; /* Largura total da tabela */
+    border-collapse: collapse; /* Remove espaços entre as bordas das células */
+}
+
+.consulta_alunos th,
+.consulta_alunos td {
+    padding: 10px; /* Espaçamento interno das células */
+    text-align: center; /* Centraliza o texto */
+    border: 1px solid var(--cor-borda); /* Borda das células */
+}
+
+.consulta_alunos th {
+    background-color: lightgrey; /* Cor de fundo dos cabeçalhos */
+    font-weight: bold; /* Cabeçalhos em negrito */
+}
+
+button {
+    font-size: 16px; /* Tamanho da fonte do botão */
+    padding: 5px 10px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    border: none; /* Remove a borda */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+}
+
+button:hover {
+    opacity: 0.9; /* Levemente transparente ao passar o mouse */
+}
+
+button[type="submit"] {
+    background-color: var(--cor-botao); /* Cor de fundo do botão de submit */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+button[type="submit"]:hover {
+    background-color: var(--cor-borda); /* Cor de fundo ao passar o mouse */
+}
+
+button[type="submit"][formaction="/deletar_aluno"] {
+    background-color: var(--cor-borda); /* Cor do botão de deletar */
+}
+
+button[type="submit"][formaction="/deletar_aluno"]:hover {
+    background-color: var(--cor-borda); /* Cor ao passar o mouse no botão de deletar */
+}
+
+.voltar-botao {
+    display: inline-block; /* Exibe como bloco em linha */
+    font-size: 18px; /* Tamanho da fonte */
+    background-color: var(--cor-botao); /* Cor de fundo do botão voltar */
+    color: rgb(0, 185, 58); /* Cor do texto */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    text-decoration: none; /* Remove a decoração do link */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+.voltar-botao:hover {
+    background-color: var(--cor-botao-hover); /* Cor de fundo ao passar o mouse no botão voltar */
+}
+
+.limpar_tudo {
+    font-size: 18px; /* Tamanho da fonte dos botões */
+    background-color: var(--cor-botao); /* Cor de fundo do botão */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 50px; /* Arredonda os cantos do botão */
+    border: none; /* Remove a borda */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: background-color 0.3s, transform 0.3s; /* Transição suave para a cor de fundo e transformação */
+}
