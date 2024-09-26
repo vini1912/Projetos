@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">  <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Responsivo para dispositivos móveis -->
+    <title>Conversão Monetária</title>  <!-- Título da página exibido na aba do navegador -->
+    <link rel="stylesheet" href="/static/styles/estilo.css">  <!-- Link para o arquivo CSS de estilo -->
+</head>
+<body>
+    <header>
+        <div class="conteudo_header">  <!-- Contêiner para o cabeçalho -->
+            <div class="logo">
+                <img src="/static/assets/moeda.png" alt="">  <!-- Logo da aplicação -->
+            </div>
+            <div class="cabecalho_titulo">
+                <h2>Converta suas moedas com facilidade e agilidade!</h2>  <!-- Título do cabeçalho -->
+            </div>
+            <div class="cabecalho_imagens">
+                <img src="/static/assets/moeda.png" alt="">  <!-- Imagens de moedas para o cabeçalho -->
+                <img src="/static/assets/moeda.png" alt="">
+                <img src="/static/assets/moeda.png" alt="">
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1>CONVERSOR DE MOEDAS</h1>  <!-- Título principal da página -->
+        <div class="conversor">
+            <form action="/" method="post" class="conversor_formulario">  <!-- Formulário para enviar os dados -->
+                <div class="conversor_label">
+                    <label for="">Valor:</label>  <!-- Rótulo para o campo de entrada -->
+                    <label for="">Valor:</label><br>  <!-- Rótulo adicional (pode ser removido) -->
+                </div>
+                <div class="conversor_input">
+                    <div class="conversor_brasil">
+                        <input type="text" name="real" value="{{ moeda_real }}" id="real">  <!-- Campo para valor em BRL -->
+                        <img src="/static/assets/brasil.png" alt="">  <!-- Imagem da bandeira do Brasil -->
+                        <span>BRL</span>  <!-- Texto indicando que é BRL -->
+                    </div>
+                    <div class="conversor_eua">
+                        <input type="text" name="dolar" value="{{ moeda_dolar }}" id="dolar">  <!-- Campo para valor em USD -->
+                        <img src="/static/assets/eua.png" alt="">  <!-- Imagem da bandeira dos EUA -->
+                        <span>USD</span>  <!-- Texto indicando que é USD -->
+                    </div>
+                </div>
+                <div class="conversor_opcoes">
+                    <div class="conversor_cotacao">
+                        <label for="">Cotação do Dólar</label><br>  <!-- Rótulo para o campo de cotação -->
+                        <input type="text" name="cotacao" value="{{ cotacao }}" id="cotacao">  <!-- Campo para cotação -->
+                    </div>
+                    
+                    <div class="botoes">
+                        <button type="submit" class="botao">Converter</button>  <!-- Botão para enviar o formulário -->
+                        <button type="button" class="limpar" onclick="limparCampos()">Limpar</button>  <!-- Botão para limpar os campos -->
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script>
+            function limparCampos() {
+                // Função para limpar os campos do formulário
+                document.getElementById("real").value = "";  // Limpa o campo de BRL
+                document.getElementById("dolar").value = "";  // Limpa o campo de USD
+                document.getElementById("cotacao").value = "";  // Limpa o campo de cotação
+            }
+        </script>
+    </main>
+</body>
+</html>

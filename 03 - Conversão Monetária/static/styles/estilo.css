@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Definindo variáveis CSS para facilitar a manutenção */
+:root{
+    --fonte-um: "Poppins";  /* Fonte primária */
+    --fonte-dois: "Kanit";   /* Fonte secundária */
+    --verde-escuro: #689452; /* Cor verde escuro */
+    --verde-claro: #e3ffd7;  /* Cor verde claro */
+}
+
+/* Reseta margens e preenchimentos de todos os elementos */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para o cabeçalho */
+header{
+    font-family: var(--fonte-um);  /* Aplica a fonte primária */
+    background-color: var(--verde-escuro);  /* Fundo verde escuro */
+}
+
+/* Estilo do contêiner do cabeçalho */
+.conteudo_header{
+    width: 1200px;  /* Largura do cabeçalho */
+    margin: auto;   /* Centraliza o cabeçalho */
+    display: grid;  /* Usa grid layout */
+    grid-template-columns: auto 1fr auto;  /* Define três colunas */
+    align-items: center;  /* Alinha itens verticalmente */
+}
+
+/* Estilo para o título do cabeçalho */
+.cabecalho_titulo{
+    text-align: left;  /* Alinha o texto à esquerda */
+    color: white;      /* Cor do texto branca */
+    font-weight: 100;  /* Peso da fonte leve */
+}
+
+/* Margem esquerda para imagens do cabeçalho */
+.cabecalho_imagens img {
+    margin-left: 10px;
+}
+
+/* Estilo do corpo da página */
+body{
+    background-color: var(--verde-claro);  /* Fundo verde claro */
+}
+
+/* Estilo do título principal no corpo */
+main h1{
+    font-family: var(--fonte-dois);  /* Aplica a fonte secundária */
+    margin: 50px 0 30px 0;           /* Margens superior e inferior */
+    color: var(--verde-escuro);       /* Cor do texto verde escuro */
+    text-align: center;               /* Centraliza o texto */
+    font-size: 40px;                  /* Tamanho da fonte */
+}
+
+/* Estilo do contêiner do conversor */
+.conversor{
+    border-radius: 70px;               /* Bordas arredondadas */
+    background-color: white;           /* Fundo branco */
+    width: 800px;                       /* Largura do contêiner */
+    margin: auto;                       /* Centraliza o contêiner */
+    padding: 50px;                     /* Espaçamento interno */
+    box-shadow: 15px 15px var(--verde-escuro); /* Sombra do contêiner */
+}
+
+/* Estilos para as seções do conversor */
+.conversor_label, .conversor_input, .conversor_opcoes{
+    display: grid;                      /* Usa grid layout */
+    grid-template-columns: 1fr 1fr;    /* Duas colunas */
+    place-items: left;                  /* Alinha itens à esquerda */
+    margin: auto;                       /* Centraliza */
+    width: 600px;                       /* Largura das seções */
+    gap: 20px;                          /* Espaçamento entre colunas */
+}
+
+/* Ajustes no contêiner de entrada */
+.conversor_input{
+    margin-top: -40px;                 /* Move para cima */
+}
+
+/* Estilo das imagens nos campos de entrada */
+.conversor_input img{
+    width: 26px;                       /* Largura das imagens */
+}
+
+/* Estilo dos campos de entrada */
+.conversor_input input{
+    font-size: 30px;                  /* Tamanho da fonte */
+    width: 200px;                     /* Largura dos campos */
+    border: 0px;                      /* Sem borda */
+}
+
+/* Estilo dos rótulos nos campos de entrada */
+.conversor_label label, .conversor_label label{
+    font-family: var(--fonte-um);    /* Aplica a fonte primária */
+    font-weight: 600;                 /* Peso da fonte médio */
+}
+
+/* Estilo dos contêineres para BRL e USD */
+.conversor_brasil, .conversor_eua{
+    border: 1px solid black;          /* Borda preta */
+    padding: 10px;                    /* Espaçamento interno */
+    border-radius: 20px;              /* Bordas arredondadas */
+    display: grid;                    /* Usa grid layout */
+    grid-template-columns: auto auto auto; /* Três colunas */
+    justify-content: center;           /* Centraliza horizontalmente */
+    align-items: center;               /* Alinha verticalmente */
+    gap: 5px;                         /* Espaçamento entre itens */
+}
+
+/* Margem superior para opções do conversor */
+.conversor_opcoes{
+    margin-top: 30px;                 /* Espaço acima */
+}
+
+/* Estilo para o rótulo da cotação */
+.conversor_cotacao label{
+    font-family: var(--fonte-um);    /* Aplica a fonte primária */
+    font-weight: 600;                 /* Peso da fonte médio */
+}
+
+/* Estilo do campo de entrada da cotação */
+.conversor_cotacao input{
+    font-size: 30px;                  /* Tamanho da fonte */
+    width: 200px;                     /* Largura do campo */
+    border-radius: 10px;              /* Bordas arredondadas */
+    padding: 0 10px;                  /* Espaçamento interno */
+    border: 1px solid black;          /* Borda preta */
+    width: 260px;                     /* Largura do campo (ajustada) */
+}
+
+/* Estilo para os botões */
+.botoes{
+    display: grid;                    /* Usa grid layout */
+    grid-template-columns: 1fr 1fr;   /* Duas colunas */
+    gap: 10px;                       /* Espaçamento entre botões */
+}
+
+/* Estilo do botão "Converter" */
+.botao{
+    border-radius: 100px;            /* Bordas arredondadas */
+    background-color: var(--verde-escuro); /* Fundo verde escuro */
+    color: var(--verde-claro);       /* Cor do texto verde claro */
+    border: 0px;                     /* Sem borda */
+    font-size: 20px;                 /* Tamanho da fonte */
+}
+
+/* Estilo do botão "Limpar" */
+.limpar{
+    border-radius: 100px;            /* Bordas arredondadas */
+    background-color: #db4242;       /* Fundo vermelho */
+    color: #FFF;                     /* Cor do texto branca */
+    border: 0px;                     /* Sem borda */
+    font-size: 20px;                 /* Tamanho da fonte */
+}
+
+/* Efeito de hover nos botões */
+.botao:hover, .limpar:hover{
+    opacity: 0.7;                    /* Levemente transparente ao passar o mouse */
+}
